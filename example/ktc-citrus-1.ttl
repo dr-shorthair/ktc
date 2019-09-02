@@ -36,25 +36,25 @@
 .
 ex:Block_A
   a ktc:Block ;
-  ktc:AreaInHectares 2.14 ;
-  ktc:MapID "Map 987" ;
-  ktc:PatchID "Patch 654" ;
-  ktc:Variety "Arafour" ;
+  ktc:areaInHectares 2.14 ;
+  ktc:mapID "Map 987" ;
+  ktc:patchID "Patch 654" ;
+  ktc:variety "Arafour" ;
   rdfs:label "Block A" ;
   sosa:isSampleOf ex:Orchard_1 ;
 .
 ex:ObservationCollection_A_190101
   a ssn-ext:ObservationCollection ;
-  ktc:CropMonitor [
+  ktc:cropMonitor [
       a foaf:Agent ;
       foaf:name "Fred Dagg" ;
     ] ;
-  ktc:MonthlyIPMRecord true ;
-  ktc:NFruitSurveyed 50 ;
-  ktc:NLeavesSurveyed 95 ;
-  ktc:NTreesSurveyed 15 ;
-  ktc:SkirtingWeedControl true ;
-  ktc:SprayDiary true ;
+  ktc:monthlyIPMRecord true ;
+  ktc:nFruitSurveyed 50 ;
+  ktc:nLeavesSurveyed 95 ;
+  ktc:nTreesSurveyed 15 ;
+  ktc:skirtingWeedControl true ;
+  ktc:sprayDiary true ;
   rdfs:label "Monitoring visit Block A 2019-01-01" ;
   sosa:hasFeatureOfInterest ex:Block_A ;
   sosa:phenomenonTime [

@@ -31,7 +31,7 @@
   owl:imports <http://www.w3.org/ns/prov-o#> ;
   owl:imports ssn:ext ;
 .
-ktc:AreaInHectares
+ktc:areaInHectares
   a owl:DatatypeProperty ;
   rdfs:domain ktc:Block ;
   rdfs:label "Area in hectares" ;
@@ -43,7 +43,7 @@ ktc:Block
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:Sample ;
 .
-ktc:CropMonitor
+ktc:cropMonitor
   a owl:ObjectProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Registered crop monitor" ;
@@ -58,31 +58,31 @@ ktc:FRWNumberOfAdults
   a sosa:ObservableProperty ;
   rdfs:label "FRW Number of Adults" ;
 .
-ktc:MapID
+ktc:mapID
   a owl:DatatypeProperty ;
   rdfs:domain ktc:Block ;
   rdfs:label "Map ID" ;
   rdfs:range xsd:string ;
 .
-ktc:MonthlyIPMRecord
+ktc:monthlyIPMRecord
   a owl:DatatypeProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Sighted monthly IPM monitoring records" ;
   rdfs:range xsd:boolean ;
 .
-ktc:NFruitSurveyed
+ktc:nFruitSurveyed
   a owl:DatatypeProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Number of Fruit Surveyed" ;
   rdfs:range xsd:integer ;
 .
-ktc:NLeavesSurveyed
+ktc:nLeavesSurveyed
   a owl:DatatypeProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Number of Leaves Surveyed" ;
   rdfs:range xsd:integer ;
 .
-ktc:NTreesSurveyed
+ktc:nTreesSurveyed
   a owl:DatatypeProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Number of Trees Surveyed" ;
@@ -94,7 +94,7 @@ ktc:Orchard
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:FeatureOfInterest ;
 .
-ktc:PatchID
+ktc:patchID
   a owl:DatatypeProperty ;
   rdfs:domain ktc:Block ;
   rdfs:label "Patch ID" ;
@@ -154,19 +154,19 @@ ktc:PresenceOfSorghumHead
   a sosa:ObservableProperty ;
   rdfs:label "Presence of Sorghum Head" ;
 .
-ktc:SkirtingWeedControl
+ktc:skirtingWeedControl
   a owl:DatatypeProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Skirting and weed control" ;
   rdfs:range xsd:boolean ;
 .
-ktc:SprayDiary
+ktc:sprayDiary
   a owl:DatatypeProperty ;
   rdfs:domain ssn-ext:ObservationCollection ;
   rdfs:label "Sighted spray diary" ;
   rdfs:range xsd:boolean ;
 .
-ktc:Variety
+ktc:variety
   a owl:DatatypeProperty ;
   rdfs:domain ktc:Block ;
   rdfs:label "Fruit variety" ;
