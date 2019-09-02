@@ -1,0 +1,177 @@
+# baseURI: http://test.biosecurity.csiro.au/def/ktc
+# imports: http://purl.org/dc/terms/
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/2006/time
+# imports: http://www.w3.org/ns/locn
+# imports: http://www.w3.org/ns/prov-o#
+# imports: http://www.w3.org/ns/ssn/ext
+# prefix: ktc
+
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix ktc: <http://test.biosecurity.csiro.au/def/ktc#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix ssn-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://test.biosecurity.csiro.au/def/ktc>
+  a owl:Ontology ;
+  owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/2006/time> ;
+  owl:imports <http://www.w3.org/ns/locn> ;
+  owl:imports <http://www.w3.org/ns/prov-o#> ;
+  owl:imports ssn:ext ;
+.
+ktc:AreaInHectares
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Area in hectares" ;
+  rdfs:range xsd:decimal ;
+.
+ktc:Block
+  a owl:Class ;
+  rdfs:label "Block within orchard" ;
+  rdfs:subClassOf geo:Feature ;
+  rdfs:subClassOf sosa:Sample ;
+.
+ktc:CropMonitor
+  a owl:ObjectProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Registered crop monitor" ;
+  rdfs:range prov:Person ;
+  rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+.
+ktc:FRWAdultsPerTree
+  a sosa:ObservableProperty ;
+  rdfs:label "FRW Adults per Tree" ;
+.
+ktc:FRWNumberOfAdults
+  a sosa:ObservableProperty ;
+  rdfs:label "FRW Number of Adults" ;
+.
+ktc:MapID
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Map ID" ;
+  rdfs:range xsd:string ;
+.
+ktc:MonthlyIPMRecord
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Sighted monthly IPM monitoring records" ;
+  rdfs:range xsd:boolean ;
+.
+ktc:NFruitSurveyed
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Number of Fruit Surveyed" ;
+  rdfs:range xsd:integer ;
+.
+ktc:NLeavesSurveyed
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Number of Leaves Surveyed" ;
+  rdfs:range xsd:integer ;
+.
+ktc:NTreesSurveyed
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Number of Trees Surveyed" ;
+  rdfs:range xsd:integer ;
+.
+ktc:Orchard
+  a owl:Class ;
+  rdfs:label "Citrus orchard" ;
+  rdfs:subClassOf geo:Feature ;
+  rdfs:subClassOf sosa:FeatureOfInterest ;
+.
+ktc:PatchID
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Patch ID" ;
+  rdfs:range xsd:string ;
+.
+ktc:PresenceOfBlastobasid
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Blastobasid" ;
+.
+ktc:PresenceOfDisease
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Disease" ;
+  skos:narrower ktc:PresenceOfGreasySpot ;
+  skos:narrower ktc:PresenceOfPhytophthora ;
+  skos:narrower ktc:PresenceOfSeptoria ;
+.
+ktc:PresenceOfFRWEggsOrLarvae
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of FRW Eggs Or Larvae" ;
+.
+ktc:PresenceOfFruitBorers
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Fruit Borers" ;
+  skos:narrower ktc:PresenceOfBlastobasid ;
+  skos:narrower ktc:PresenceOfOrangeFruitBorer ;
+  skos:narrower ktc:PresenceOfSorghumHead ;
+.
+ktc:PresenceOfFruitFlyDamage
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Fruit Fly Damage" ;
+.
+ktc:PresenceOfGreasySpot
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Greasy Spot" ;
+.
+ktc:PresenceOfLBAM
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of LBAM" ;
+.
+ktc:PresenceOfMealyBugs
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Mealy Bugs" ;
+.
+ktc:PresenceOfOrangeFruitBorer
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Orange Fruit Borer" ;
+.
+ktc:PresenceOfPhytophthora
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Phytophthora" ;
+.
+ktc:PresenceOfSeptoria
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Septoria" ;
+.
+ktc:PresenceOfSorghumHead
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Sorghum Head" ;
+.
+ktc:SkirtingWeedControl
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Skirting and weed control" ;
+  rdfs:range xsd:boolean ;
+.
+ktc:SprayDiary
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Sighted spray diary" ;
+  rdfs:range xsd:boolean ;
+.
+ktc:Variety
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Fruit variety" ;
+  rdfs:range xsd:string ;
+.
+sosa:ObservableProperty
+  rdfs:subClassOf skos:Concept ;
+.

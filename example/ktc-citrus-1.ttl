@@ -1,0 +1,174 @@
+# baseURI: http://test.biosecurity.csiro.au/dataset/ktc-citrus-1
+# imports: http://linked.data.gov.au/def/datatype
+# imports: http://purl.org/dc/terms/
+# imports: http://test.biosecurity.csiro.au/def/ktc
+# imports: http://www.opengis.net/ont/geosparql
+# imports: http://www.w3.org/2004/02/skos/core
+# imports: http://www.w3.org/ns/locn
+# imports: http://www.w3.org/ns/prov-o#
+# imports: http://www.w3.org/ns/ssn/ext
+
+@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix ex: <http://test.biosecurity.csiro.au/dataset/ktc-citrus-1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ktc: <http://test.biosecurity.csiro.au/def/ktc#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn-ext: <http://www.w3.org/ns/ssn/ext/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://test.biosecurity.csiro.au/dataset/ktc-citrus-1>
+  a owl:Ontology ;
+  owl:imports <http://linked.data.gov.au/def/datatype> ;
+  owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports <http://test.biosecurity.csiro.au/def/ktc> ;
+  owl:imports <http://www.opengis.net/ont/geosparql> ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:imports <http://www.w3.org/ns/locn> ;
+  owl:imports <http://www.w3.org/ns/prov-o#> ;
+  owl:imports <http://www.w3.org/ns/ssn/ext> ;
+.
+ex:Block_A
+  a ktc:Block ;
+  ktc:AreaInHectares 2.14 ;
+  ktc:MapID "Map 987" ;
+  ktc:PatchID "Patch 654" ;
+  ktc:Variety "Arafour" ;
+  rdfs:label "Block A" ;
+  sosa:isSampleOf ex:Orchard_1 ;
+.
+ex:ObservationCollection_A_190101
+  a ssn-ext:ObservationCollection ;
+  ktc:CropMonitor [
+      a foaf:Agent ;
+      foaf:name "Fred Dagg" ;
+    ] ;
+  ktc:MonthlyIPMRecord true ;
+  ktc:NFruitSurveyed 50 ;
+  ktc:NLeavesSurveyed 95 ;
+  ktc:NTreesSurveyed 15 ;
+  ktc:SkirtingWeedControl true ;
+  ktc:SprayDiary true ;
+  rdfs:label "Monitoring visit Block A 2019-01-01" ;
+  sosa:hasFeatureOfInterest ex:Block_A ;
+  sosa:phenomenonTime [
+      a time:Instant ;
+      time:inXSDDate "2019-01-01"^^xsd:date ;
+    ] ;
+  sosa:usedProcedure <http://example.org/protocol-z123> ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfBlastobasid ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfFRWEggsOrLarvae ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfGreasySpot ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfLBAM ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfMealyBugs ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfOrangeFruitBorer ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfPhytophthora ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfSeptoria ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value false ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfSorghumHead ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Boolean ;
+          data:value true ;
+        ] ;
+      sosa:observedProperty ktc:PresenceOfFruitFlyDamage ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:Count ;
+          data:value 7 ;
+        ] ;
+      sosa:observedProperty ktc:FRWNumberOfAdults ;
+    ] ;
+  ssn-ext:hasMember [
+      a sosa:Observation ;
+      sosa:hasResult [
+          a data:QuantitativeMeasure ;
+          data:value 0.466667 ;
+        ] ;
+      sosa:observedProperty ktc:FRWAdultsPerTree ;
+    ] ;
+.
+ex:Orchard_1
+  a ktc:Orchard ;
+  rdfs:label "Orchard 1" ;
+  locn:address [
+      a locn:Address ;
+      locn:adminUnitL1 "Australia" ;
+      locn:adminUnitL2 "Queensland" ;
+      locn:fullAddress "write out full address here" ;
+      locn:postCode "4999" ;
+      locn:postName "Thunderberg" ;
+      locn:thoroughfare "Max Way" ;
+    ] ;
+.
