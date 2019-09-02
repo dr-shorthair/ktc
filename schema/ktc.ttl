@@ -1,4 +1,5 @@
 # baseURI: http://test.biosecurity.csiro.au/def/ktc
+# imports: file:///external/cache-external/doap.rdf
 # imports: http://purl.org/dc/terms/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.w3.org/2004/02/skos/core
@@ -8,6 +9,8 @@
 # imports: http://www.w3.org/ns/ssn/ext
 # prefix: ktc
 
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix ktc: <http://test.biosecurity.csiro.au/def/ktc#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
@@ -23,32 +26,33 @@
 
 <http://test.biosecurity.csiro.au/def/ktc>
   a owl:Ontology ;
-  owl:imports <http://purl.org/dc/terms/> ;
+  dcterms:created "2019-09-02"^^xsd:date ;
+  dcterms:creator <https://orcid.org/0000-0002-3884-3420> ;
+  dcterms:license <http://creativecommons.org/publicdomain/zero/1.0/> ;
+  rdfs:comment "Preliminary schema for Citrus Crop Monitoring observations - following Form 2: KCT Export Program" ;
+  owl:imports <file:///external/cache-external/doap.rdf> ;
+  owl:imports dcterms: ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <http://www.w3.org/2006/time> ;
   owl:imports <http://www.w3.org/ns/locn> ;
   owl:imports <http://www.w3.org/ns/prov-o#> ;
   owl:imports ssn:ext ;
-.
-ktc:areaInHectares
-  a owl:DatatypeProperty ;
-  rdfs:domain ktc:Block ;
-  rdfs:label "Area in hectares" ;
-  rdfs:range xsd:decimal ;
+  prov:wasGeneratedBy [
+      a doap:Project ;
+      a prov:Activity ;
+      doap:repository [
+          a doap:GitRepository ;
+          doap:browse <https://github.com/dr-shorthair/ktc> ;
+          doap:location <https://github.com/dr-shorthair/ktc.git> ;
+        ] ;
+    ] ;
 .
 ktc:Block
   a owl:Class ;
   rdfs:label "Block within orchard" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:Sample ;
-.
-ktc:cropMonitor
-  a owl:ObjectProperty ;
-  rdfs:domain ssn-ext:ObservationCollection ;
-  rdfs:label "Registered crop monitor" ;
-  rdfs:range prov:Person ;
-  rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
 .
 ktc:FRWAdultsPerTree
   a sosa:ObservableProperty ;
@@ -58,47 +62,11 @@ ktc:FRWNumberOfAdults
   a sosa:ObservableProperty ;
   rdfs:label "FRW Number of Adults" ;
 .
-ktc:mapID
-  a owl:DatatypeProperty ;
-  rdfs:domain ktc:Block ;
-  rdfs:label "Map ID" ;
-  rdfs:range xsd:string ;
-.
-ktc:monthlyIPMRecord
-  a owl:DatatypeProperty ;
-  rdfs:domain ssn-ext:ObservationCollection ;
-  rdfs:label "Sighted monthly IPM monitoring records" ;
-  rdfs:range xsd:boolean ;
-.
-ktc:nFruitSurveyed
-  a owl:DatatypeProperty ;
-  rdfs:domain ssn-ext:ObservationCollection ;
-  rdfs:label "Number of Fruit Surveyed" ;
-  rdfs:range xsd:integer ;
-.
-ktc:nLeavesSurveyed
-  a owl:DatatypeProperty ;
-  rdfs:domain ssn-ext:ObservationCollection ;
-  rdfs:label "Number of Leaves Surveyed" ;
-  rdfs:range xsd:integer ;
-.
-ktc:nTreesSurveyed
-  a owl:DatatypeProperty ;
-  rdfs:domain ssn-ext:ObservationCollection ;
-  rdfs:label "Number of Trees Surveyed" ;
-  rdfs:range xsd:integer ;
-.
 ktc:Orchard
   a owl:Class ;
   rdfs:label "Citrus orchard" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:FeatureOfInterest ;
-.
-ktc:patchID
-  a owl:DatatypeProperty ;
-  rdfs:domain ktc:Block ;
-  rdfs:label "Patch ID" ;
-  rdfs:range xsd:string ;
 .
 ktc:PresenceOfBlastobasid
   a sosa:ObservableProperty ;
@@ -153,6 +121,55 @@ ktc:PresenceOfSeptoria
 ktc:PresenceOfSorghumHead
   a sosa:ObservableProperty ;
   rdfs:label "Presence of Sorghum Head" ;
+.
+ktc:areaInHectares
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Area in hectares" ;
+  rdfs:range xsd:decimal ;
+.
+ktc:cropMonitor
+  a owl:ObjectProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Registered crop monitor" ;
+  rdfs:range prov:Person ;
+  rdfs:range <http://xmlns.com/foaf/0.1/Agent> ;
+.
+ktc:mapID
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Map ID" ;
+  rdfs:range xsd:string ;
+.
+ktc:monthlyIPMRecord
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Sighted monthly IPM monitoring records" ;
+  rdfs:range xsd:boolean ;
+.
+ktc:nFruitSurveyed
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Number of Fruit Surveyed" ;
+  rdfs:range xsd:integer ;
+.
+ktc:nLeavesSurveyed
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Number of Leaves Surveyed" ;
+  rdfs:range xsd:integer ;
+.
+ktc:nTreesSurveyed
+  a owl:DatatypeProperty ;
+  rdfs:domain ssn-ext:ObservationCollection ;
+  rdfs:label "Number of Trees Surveyed" ;
+  rdfs:range xsd:integer ;
+.
+ktc:patchID
+  a owl:DatatypeProperty ;
+  rdfs:domain ktc:Block ;
+  rdfs:label "Patch ID" ;
+  rdfs:range xsd:string ;
 .
 ktc:skirtingWeedControl
   a owl:DatatypeProperty ;
