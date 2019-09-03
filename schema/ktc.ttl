@@ -14,6 +14,7 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix ktc: <http://test.biosecurity.csiro.au/def/ktc#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix op: <http://test.biosecurity.csiro.au/def/op/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -54,73 +55,11 @@ ktc:Block
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:Sample ;
 .
-ktc:FRWAdultsPerTree
-  a sosa:ObservableProperty ;
-  rdfs:label "FRW Adults per Tree" ;
-.
-ktc:FRWNumberOfAdults
-  a sosa:ObservableProperty ;
-  rdfs:label "FRW Number of Adults" ;
-.
 ktc:Orchard
   a owl:Class ;
   rdfs:label "Citrus orchard" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:FeatureOfInterest ;
-.
-ktc:PresenceOfBlastobasid
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Blastobasid" ;
-.
-ktc:PresenceOfDisease
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Disease" ;
-  skos:narrower ktc:PresenceOfGreasySpot ;
-  skos:narrower ktc:PresenceOfPhytophthora ;
-  skos:narrower ktc:PresenceOfSeptoria ;
-.
-ktc:PresenceOfFRWEggsOrLarvae
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of FRW Eggs Or Larvae" ;
-.
-ktc:PresenceOfFruitBorers
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Fruit Borers" ;
-  skos:narrower ktc:PresenceOfBlastobasid ;
-  skos:narrower ktc:PresenceOfOrangeFruitBorer ;
-  skos:narrower ktc:PresenceOfSorghumHead ;
-.
-ktc:PresenceOfFruitFlyDamage
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Fruit Fly Damage" ;
-.
-ktc:PresenceOfGreasySpot
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Greasy Spot" ;
-.
-ktc:PresenceOfLBAM
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of LBAM" ;
-.
-ktc:PresenceOfMealyBugs
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Mealy Bugs" ;
-.
-ktc:PresenceOfOrangeFruitBorer
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Orange Fruit Borer" ;
-.
-ktc:PresenceOfPhytophthora
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Phytophthora" ;
-.
-ktc:PresenceOfSeptoria
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Septoria" ;
-.
-ktc:PresenceOfSorghumHead
-  a sosa:ObservableProperty ;
-  rdfs:label "Presence of Sorghum Head" ;
 .
 ktc:areaInHectares
   a owl:DatatypeProperty ;
@@ -188,6 +127,86 @@ ktc:variety
   rdfs:domain ktc:Block ;
   rdfs:label "Fruit variety" ;
   rdfs:range xsd:string ;
+.
+op:CitrusPests
+  a skos:Collection ;
+  rdfs:label "Collection of observable properties related to citrus pests" ;
+  skos:member op:FRWAdultsPerTree ;
+  skos:member op:FRWNumberOfAdults ;
+  skos:member op:PresenceOfBlastobasid ;
+  skos:member op:PresenceOfDisease ;
+  skos:member op:PresenceOfFRWEggsOrLarvae ;
+  skos:member op:PresenceOfFruitBorers ;
+  skos:member op:PresenceOfFruitFlyDamage ;
+  skos:member op:PresenceOfGreasySpot ;
+  skos:member op:PresenceOfLBAM ;
+  skos:member op:PresenceOfMealyBugs ;
+  skos:member op:PresenceOfOrangeFruitBorer ;
+  skos:member op:PresenceOfPhytophthora ;
+  skos:member op:PresenceOfSeptoria ;
+  skos:member op:PresenceOfSorghumHead ;
+.
+op:FRWAdultsPerTree
+  a sosa:ObservableProperty ;
+  rdfs:label "FRW Adults per Tree" ;
+.
+op:FRWNumberOfAdults
+  a sosa:ObservableProperty ;
+  rdfs:label "FRW Number of Adults" ;
+.
+op:PresenceOfBlastobasid
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Blastobasid" ;
+.
+op:PresenceOfDisease
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Disease" ;
+  skos:narrower op:PresenceOfGreasySpot ;
+  skos:narrower op:PresenceOfPhytophthora ;
+  skos:narrower op:PresenceOfSeptoria ;
+.
+op:PresenceOfFRWEggsOrLarvae
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of FRW Eggs Or Larvae" ;
+.
+op:PresenceOfFruitBorers
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Fruit Borers" ;
+  skos:narrower op:PresenceOfBlastobasid ;
+  skos:narrower op:PresenceOfOrangeFruitBorer ;
+  skos:narrower op:PresenceOfSorghumHead ;
+.
+op:PresenceOfFruitFlyDamage
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Fruit Fly Damage" ;
+.
+op:PresenceOfGreasySpot
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Greasy Spot" ;
+.
+op:PresenceOfLBAM
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of LBAM" ;
+.
+op:PresenceOfMealyBugs
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Mealy Bugs" ;
+.
+op:PresenceOfOrangeFruitBorer
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Orange Fruit Borer" ;
+.
+op:PresenceOfPhytophthora
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Phytophthora" ;
+.
+op:PresenceOfSeptoria
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Septoria" ;
+.
+op:PresenceOfSorghumHead
+  a sosa:ObservableProperty ;
+  rdfs:label "Presence of Sorghum Head" ;
 .
 sosa:ObservableProperty
   rdfs:subClassOf skos:Concept ;
