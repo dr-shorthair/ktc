@@ -157,7 +157,7 @@ ex:ObservationCollection_A_190101
           a data:QuantitativeMeasure ;
           data:value 0.466667 ;
         ] ;
-      sosa:observedProperty ktc:FRWAdultsPerTree ;
+      sosa:observedProperty op:FRWAdultsPerTree ;
     ] ;
 .
 ex:Orchard_1
