@@ -1,0 +1,296 @@
+{
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "@type" : "time:Instant",
+    "inXSDDate" : "2019-01-01"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "data:Count",
+    "data:value" : 7
+  }, {
+    "@id" : "_:b10",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b11",
+    "observedProperty" : "op:PresenceOfLBAM"
+  }, {
+    "@id" : "_:b11",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b12",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b13",
+    "observedProperty" : "op:PresenceOfFRWEggsOrLarvae"
+  }, {
+    "@id" : "_:b13",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b14",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b3",
+    "observedProperty" : "op:PresenceOfPhytophthora"
+  }, {
+    "@id" : "_:b15",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b26",
+    "observedProperty" : "op:PresenceOfSeptoria"
+  }, {
+    "@id" : "_:b16",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b5",
+    "observedProperty" : "op:PresenceOfBlastobasid"
+  }, {
+    "@id" : "_:b17",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b4",
+    "observedProperty" : "op:PresenceOfMealyBugs"
+  }, {
+    "@id" : "_:b18",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b7",
+    "observedProperty" : "op:PresenceOfGreasySpot"
+  }, {
+    "@id" : "_:b19",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b23",
+    "observedProperty" : "op:FRWAdultsPerTree"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "data:Boolean",
+    "data:value" : true
+  }, {
+    "@id" : "_:b20",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b1",
+    "observedProperty" : "op:FRWNumberOfAdults"
+  }, {
+    "@id" : "_:b21",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b25",
+    "observedProperty" : "op:PresenceOfOrangeFruitBorer"
+  }, {
+    "@id" : "_:b22",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b24",
+    "observedProperty" : "op:PresenceOfSorghumHead"
+  }, {
+    "@id" : "_:b23",
+    "@type" : "data:QuantitativeMeasure",
+    "data:value" : {
+      "@type" : "xsd:decimal",
+      "@value" : "0.466667"
+    }
+  }, {
+    "@id" : "_:b24",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b25",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b26",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b3",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b4",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b5",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b6",
+    "@type" : "foaf:Agent",
+    "name" : "Fred Dagg"
+  }, {
+    "@id" : "_:b7",
+    "@type" : "data:Boolean",
+    "data:value" : false
+  }, {
+    "@id" : "_:b8",
+    "@type" : "sosa:Observation",
+    "hasResult" : "_:b2",
+    "observedProperty" : "op:PresenceOfFruitFlyDamage"
+  }, {
+    "@id" : "_:b9",
+    "@type" : "locn:Address",
+    "adminUnitL1" : "Australia",
+    "adminUnitL2" : "Queensland",
+    "fullAddress" : "write out full address here",
+    "postCode" : "4999",
+    "postName" : "Thunderberg",
+    "thoroughfare" : "Max Way"
+  }, {
+    "@id" : "http://test.biosecurity.csiro.au/dataset/ktc-citrus-1",
+    "@type" : "owl:Ontology",
+    "imports" : [ "http://linked.data.gov.au/def/datatype", "http://test.biosecurity.csiro.au/def/ktc", "http://www.w3.org/ns/ssn/ext", "http://www.w3.org/ns/prov-o#", "http://www.w3.org/ns/locn", "http://www.w3.org/2004/02/skos/core", "http://www.opengis.net/ont/geosparql", "http://purl.org/dc/terms/" ]
+  }, {
+    "@id" : "ex:Block_A",
+    "@type" : "ktc:Block",
+    "areaInHectares" : "2.14",
+    "mapID" : "Map 987",
+    "patchID" : "Patch 654",
+    "variety" : "Arafour",
+    "label" : "Block A",
+    "isSampleOf" : "ex:Orchard_1"
+  }, {
+    "@id" : "ex:ObservationCollection_A_190101",
+    "@type" : "ssn-ext:ObservationCollection",
+    "type" : "Registered crop monitor report (replace with a URI later)",
+    "cropMonitor" : "_:b6",
+    "ktc:monthlyIPMRecord" : true,
+    "ktc:nFruitSurveyed" : 50,
+    "ktc:nLeavesSurveyed" : 95,
+    "ktc:nTreesSurveyed" : 15,
+    "ktc:skirtingWeedControl" : true,
+    "ktc:sprayDiary" : true,
+    "label" : "Monitoring visit Block A 2019-01-01",
+    "hasFeatureOfInterest" : "ex:Block_A",
+    "phenomenonTime" : "_:b0",
+    "usedProcedure" : "http://example.org/protocol-z123",
+    "hasMember" : [ "_:b10", "_:b15", "_:b12", "_:b14", "_:b8", "_:b16", "_:b17", "_:b18", "_:b19", "_:b20", "_:b21", "_:b22" ]
+  }, {
+    "@id" : "ex:Orchard_1",
+    "@type" : "ktc:Orchard",
+    "label" : "Orchard 1",
+    "address" : "_:b9"
+  } ],
+  "@context" : {
+    "inXSDDate" : {
+      "@id" : "http://www.w3.org/2006/time#inXSDDate",
+      "@type" : "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "value" : {
+      "@id" : "http://linked.data.gov.au/def/datatype/value",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "name" : {
+      "@id" : "http://xmlns.com/foaf/0.1/name"
+    },
+    "hasResult" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasResult",
+      "@type" : "@id"
+    },
+    "observedProperty" : {
+      "@id" : "http://www.w3.org/ns/sosa/observedProperty",
+      "@type" : "@id"
+    },
+    "thoroughfare" : {
+      "@id" : "http://www.w3.org/ns/locn#thoroughfare"
+    },
+    "postName" : {
+      "@id" : "http://www.w3.org/ns/locn#postName"
+    },
+    "postCode" : {
+      "@id" : "http://www.w3.org/ns/locn#postCode"
+    },
+    "fullAddress" : {
+      "@id" : "http://www.w3.org/ns/locn#fullAddress"
+    },
+    "adminUnitL2" : {
+      "@id" : "http://www.w3.org/ns/locn#adminUnitL2"
+    },
+    "adminUnitL1" : {
+      "@id" : "http://www.w3.org/ns/locn#adminUnitL1"
+    },
+    "variety" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#variety"
+    },
+    "patchID" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#patchID"
+    },
+    "mapID" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#mapID"
+    },
+    "areaInHectares" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#areaInHectares",
+      "@type" : "http://www.w3.org/2001/XMLSchema#decimal"
+    },
+    "isSampleOf" : {
+      "@id" : "http://www.w3.org/ns/sosa/isSampleOf",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "monthlyIPMRecord" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#monthlyIPMRecord",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "nFruitSurveyed" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#nFruitSurveyed",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "type" : {
+      "@id" : "http://purl.org/dc/terms/type"
+    },
+    "cropMonitor" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#cropMonitor",
+      "@type" : "@id"
+    },
+    "hasMember" : {
+      "@id" : "http://www.w3.org/ns/ssn/ext/hasMember",
+      "@type" : "@id"
+    },
+    "hasFeatureOfInterest" : {
+      "@id" : "http://www.w3.org/ns/sosa/hasFeatureOfInterest",
+      "@type" : "@id"
+    },
+    "usedProcedure" : {
+      "@id" : "http://www.w3.org/ns/sosa/usedProcedure",
+      "@type" : "@id"
+    },
+    "nTreesSurveyed" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#nTreesSurveyed",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "phenomenonTime" : {
+      "@id" : "http://www.w3.org/ns/sosa/phenomenonTime",
+      "@type" : "@id"
+    },
+    "nLeavesSurveyed" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#nLeavesSurveyed",
+      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sprayDiary" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#sprayDiary",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "skirtingWeedControl" : {
+      "@id" : "http://test.biosecurity.csiro.au/def/ktc#skirtingWeedControl",
+      "@type" : "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "imports" : {
+      "@id" : "http://www.w3.org/2002/07/owl#imports",
+      "@type" : "@id"
+    },
+    "address" : {
+      "@id" : "http://www.w3.org/ns/locn#address",
+      "@type" : "@id"
+    },
+    "op" : "http://test.biosecurity.csiro.au/def/op/",
+    "data" : "http://linked.data.gov.au/def/datatype/",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "skos" : "http://www.w3.org/2004/02/skos/core#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "ssn-ext" : "http://www.w3.org/ns/ssn/ext/",
+    "ex" : "http://test.biosecurity.csiro.au/dataset/ktc-citrus-1/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "ktc" : "http://test.biosecurity.csiro.au/def/ktc#",
+    "time" : "http://www.w3.org/2006/time#",
+    "locn" : "http://www.w3.org/ns/locn#",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "foaf" : "http://xmlns.com/foaf/0.1/",
+    "sosa" : "http://www.w3.org/ns/sosa/",
+    "dc" : "http://purl.org/dc/elements/1.1/"
+  }
+}
