@@ -54,12 +54,23 @@ ktc:Block
   rdfs:label "Block within orchard" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:Sample ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass ktc:Orchard ;
+      owl:onProperty sosa:isSampleOf ;
+    ] ;
 .
 ktc:Orchard
   a owl:Class ;
   rdfs:label "Citrus orchard" ;
   rdfs:subClassOf geo:Feature ;
   rdfs:subClassOf sosa:FeatureOfInterest ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty locn:address ;
+    ] ;
 .
 ktc:areaInHectares
   a owl:DatatypeProperty ;
@@ -133,18 +144,12 @@ op:CitrusPests
   rdfs:label "Collection of observable properties related to citrus pests" ;
   skos:member op:FRWAdultsPerTree ;
   skos:member op:FRWNumberOfAdults ;
-  skos:member op:PresenceOfBlastobasid ;
   skos:member op:PresenceOfDisease ;
   skos:member op:PresenceOfFRWEggsOrLarvae ;
   skos:member op:PresenceOfFruitBorers ;
   skos:member op:PresenceOfFruitFlyDamage ;
-  skos:member op:PresenceOfGreasySpot ;
   skos:member op:PresenceOfLBAM ;
   skos:member op:PresenceOfMealyBugs ;
-  skos:member op:PresenceOfOrangeFruitBorer ;
-  skos:member op:PresenceOfPhytophthora ;
-  skos:member op:PresenceOfSeptoria ;
-  skos:member op:PresenceOfSorghumHead ;
 .
 op:FRWAdultsPerTree
   a sosa:ObservableProperty ;
