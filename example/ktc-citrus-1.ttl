@@ -9,6 +9,8 @@
 # imports: http://www.w3.org/ns/ssn/ext
 
 @prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix ex: <http://test.biosecurity.csiro.au/dataset/ktc-citrus-1/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix ktc: <http://test.biosecurity.csiro.au/def/ktc#> .
@@ -27,7 +29,7 @@
 <http://test.biosecurity.csiro.au/dataset/ktc-citrus-1>
   a owl:Ontology ;
   owl:imports <http://linked.data.gov.au/def/datatype> ;
-  owl:imports <http://purl.org/dc/terms/> ;
+  owl:imports dcterms: ;
   owl:imports <http://test.biosecurity.csiro.au/def/ktc> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
@@ -46,6 +48,7 @@ ex:Block_A
 .
 ex:ObservationCollection_A_190101
   a ssn-ext:ObservationCollection ;
+  dcterms:type "Registered crop monitor report (replace with a URI later)" ;
   ktc:cropMonitor [
       a foaf:Agent ;
       foaf:name "Fred Dagg" ;
