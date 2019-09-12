@@ -37,6 +37,19 @@
   owl:imports <http://www.w3.org/ns/prov-o#> ;
   owl:imports <http://www.w3.org/ns/ssn/ext> ;
 .
+ex:Orchard_1
+  a ktc:Orchard ;
+  rdfs:label "Orchard 1" ;
+  locn:address [
+      a locn:Address ;
+      locn:adminUnitL1 "Australia" ;
+      locn:adminUnitL2 "Queensland" ;
+      locn:fullAddress "write out full address here" ;
+      locn:postCode "4999" ;
+      locn:postName "Thunderberg" ;
+      locn:thoroughfare "Max Way" ;
+    ] ;
+.
 ex:Block_A
   a ktc:Block ;
   ktc:areaInHectares 2.14 ;
@@ -161,18 +174,5 @@ ex:ObservationCollection_A_190101
           data:value 0.466667 ;
         ] ;
       sosa:observedProperty op:FRWAdultsPerTree ;
-    ] ;
-.
-ex:Orchard_1
-  a ktc:Orchard ;
-  rdfs:label "Orchard 1" ;
-  locn:address [
-      a locn:Address ;
-      locn:adminUnitL1 "Australia" ;
-      locn:adminUnitL2 "Queensland" ;
-      locn:fullAddress "write out full address here" ;
-      locn:postCode "4999" ;
-      locn:postName "Thunderberg" ;
-      locn:thoroughfare "Max Way" ;
     ] ;
 .
